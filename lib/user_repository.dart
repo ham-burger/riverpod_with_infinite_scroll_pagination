@@ -14,6 +14,7 @@ class UserRepository {
     switch (page) {
       case 2:
         result = UsersResponse(
+          page: page,
           isLast: true,
           users: List.generate(
             5,
@@ -23,7 +24,8 @@ class UserRepository {
         break;
       default:
         result = UsersResponse(
-          isLast: true,
+          page: page,
+          isLast: false,
           users: List.generate(
             10,
             (index) => _createUser(10 * page + index),

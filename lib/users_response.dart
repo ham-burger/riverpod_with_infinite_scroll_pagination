@@ -6,11 +6,16 @@ part 'users_response.g.dart';
 
 @freezed
 class UsersResponse with _$UsersResponse {
+  const UsersResponse._();
+
   const factory UsersResponse({
+    required int page,
     required bool isLast,
     required List<User> users,
   }) = _UsersResponse;
 
   factory UsersResponse.fromJson(Map<String, dynamic> json) =>
       _$UsersResponseFromJson(json);
+
+  int get nextPage => page + 1;
 }

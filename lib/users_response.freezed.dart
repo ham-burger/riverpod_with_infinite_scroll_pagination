@@ -20,6 +20,7 @@ UsersResponse _$UsersResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UsersResponse {
+  int get page => throw _privateConstructorUsedError;
   bool get isLast => throw _privateConstructorUsedError;
   List<User> get users => throw _privateConstructorUsedError;
 
@@ -34,7 +35,7 @@ abstract class $UsersResponseCopyWith<$Res> {
   factory $UsersResponseCopyWith(
           UsersResponse value, $Res Function(UsersResponse) then) =
       _$UsersResponseCopyWithImpl<$Res>;
-  $Res call({bool isLast, List<User> users});
+  $Res call({int page, bool isLast, List<User> users});
 }
 
 /// @nodoc
@@ -48,10 +49,15 @@ class _$UsersResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? page = freezed,
     Object? isLast = freezed,
     Object? users = freezed,
   }) {
     return _then(_value.copyWith(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
       isLast: isLast == freezed
           ? _value.isLast
           : isLast // ignore: cast_nullable_to_non_nullable
@@ -71,7 +77,7 @@ abstract class _$$_UsersResponseCopyWith<$Res>
           _$_UsersResponse value, $Res Function(_$_UsersResponse) then) =
       __$$_UsersResponseCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLast, List<User> users});
+  $Res call({int page, bool isLast, List<User> users});
 }
 
 /// @nodoc
@@ -87,10 +93,15 @@ class __$$_UsersResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? page = freezed,
     Object? isLast = freezed,
     Object? users = freezed,
   }) {
     return _then(_$_UsersResponse(
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
       isLast: isLast == freezed
           ? _value.isLast
           : isLast // ignore: cast_nullable_to_non_nullable
@@ -105,14 +116,19 @@ class __$$_UsersResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersResponse implements _UsersResponse {
+class _$_UsersResponse extends _UsersResponse {
   const _$_UsersResponse(
-      {required this.isLast, required final List<User> users})
-      : _users = users;
+      {required this.page,
+      required this.isLast,
+      required final List<User> users})
+      : _users = users,
+        super._();
 
   factory _$_UsersResponse.fromJson(Map<String, dynamic> json) =>
       _$$_UsersResponseFromJson(json);
 
+  @override
+  final int page;
   @override
   final bool isLast;
   final List<User> _users;
@@ -124,7 +140,7 @@ class _$_UsersResponse implements _UsersResponse {
 
   @override
   String toString() {
-    return 'UsersResponse(isLast: $isLast, users: $users)';
+    return 'UsersResponse(page: $page, isLast: $isLast, users: $users)';
   }
 
   @override
@@ -132,6 +148,7 @@ class _$_UsersResponse implements _UsersResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UsersResponse &&
+            const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.isLast, isLast) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
@@ -140,6 +157,7 @@ class _$_UsersResponse implements _UsersResponse {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(page),
       const DeepCollectionEquality().hash(isLast),
       const DeepCollectionEquality().hash(_users));
 
@@ -156,14 +174,18 @@ class _$_UsersResponse implements _UsersResponse {
   }
 }
 
-abstract class _UsersResponse implements UsersResponse {
+abstract class _UsersResponse extends UsersResponse {
   const factory _UsersResponse(
-      {required final bool isLast,
+      {required final int page,
+      required final bool isLast,
       required final List<User> users}) = _$_UsersResponse;
+  const _UsersResponse._() : super._();
 
   factory _UsersResponse.fromJson(Map<String, dynamic> json) =
       _$_UsersResponse.fromJson;
 
+  @override
+  int get page;
   @override
   bool get isLast;
   @override
