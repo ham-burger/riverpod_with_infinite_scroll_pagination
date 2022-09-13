@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/user.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/user.dart';
 
 part 'users_response.freezed.dart';
 part 'users_response.g.dart';

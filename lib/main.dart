@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/users_view.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/ui/users_view.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

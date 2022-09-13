@@ -3,8 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/user.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/users_view_model.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/user.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/ui/users_view_model.dart';
 
 class UsersView extends HookConsumerWidget {
   UsersView({super.key});

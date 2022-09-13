@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/user_repository.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/users_response.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/users_view_state.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/user_repository.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/users_response.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/ui/users_view_state.dart';
 
 final usersViewModelProvider =
     StateNotifierProvider<UsersViewModel, UsersViewState>(

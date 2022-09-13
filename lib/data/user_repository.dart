@@ -1,5 +1,5 @@
-import 'package:riverpod_with_infinite_scroll_pagination/user.dart';
-import 'package:riverpod_with_infinite_scroll_pagination/users_response.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/user.dart';
+import 'package:riverpod_with_infinite_scroll_pagination/data/users_response.dart';
 
 class UserRepository {
   User _createUser(int key) {
