@@ -1,5 +1,8 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_with_infinite_scroll_pagination/data/user.dart';
 import 'package:riverpod_with_infinite_scroll_pagination/data/users_response.dart';
+
+final userRepositoryProvider = Provider((ref) => UserRepository());
 
 class UserRepository {
   User _createUser(int key) {

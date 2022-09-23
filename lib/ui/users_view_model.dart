@@ -7,14 +7,21 @@ final usersViewModelProvider =
     StateNotifierProvider<UsersViewModel, UsersViewState>(
   (ref) {
     return UsersViewModel(
+      ref,
       UsersViewState.initial(),
     );
   },
 );
 
 class UsersViewModel extends StateNotifier<UsersViewState> {
-  UsersViewModel(UsersViewState? usersViewState)
-      : super(usersViewState ?? UsersViewState.initial());
+  UsersViewModel(
+    this._ref, [
+    UsersViewState? usersViewState,
+  ]) : super(usersViewState ?? UsersViewState.initial());
+
+  final Ref _ref;
+
+  UserRepository get _userRepository => _ref.read(userRepositoryProvider);
 
   Future<void> fetchPage(
     int page,
@@ -22,7 +29,7 @@ class UsersViewModel extends StateNotifier<UsersViewState> {
     void Function(String) onError,
   ) async {
     try {
-      final response = await UserRepository().getUsers(page);
+      final response = await _userRepository.getUsers(page);
       onSuccess(response);
     } catch (e) {
       onError('error');
